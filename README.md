@@ -20,10 +20,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Setup Resources in Azure
+- Ensure Connectivity between the client and Domain Controller
+- Install Active Directory
+- Create an Admin and Normal User Account in AD
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -35,7 +35,12 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 <img src="https://i.imgur.com/d22FHIm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  We first create our Domain Controller by creating an Azure Virtual Machine with the Windows Server 2022 image, with the default settings.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/ab9c2f0c-7bea-40e4-b235-83aa2654965d)
+
+  Next we create another Azure Virtual Machine with a Windows 10 image, and we make sure that it is in the same Virtual Network as our Domain Controller we just created.
+
 </p>
 <br />
 
