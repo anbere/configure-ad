@@ -94,10 +94,34 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/f6186f2d-78b7-4c3e-8aea-876706c50ee7)
 
-
+  Active Directory has now been successfully installed!
   
 </p>
+<br />
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  <h2>Create an Admin and Normal User Account in AD</h2>
+
+  We will open up Active Directory by searching for 'Active Directory Users and Computers' from the start menu. Welcome to the UI for Active Directory!
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/c6d29b1d-08d0-4154-95d6-6cdbdd5bea06)
+
+  Now in our `mydomain.com` we are going to make two Organizational Units. One named '_ADMINS' and one named 'EMPLOYEES' these will hold our Admin users and Employee users.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/ff5a15d5-afa4-45e5-854c-bf7526129e63)
+
+  Within our '_ADMINS' OU, create a new user, I will name them Jane Doe and for this lab we will use the password settings shown below as this is just for testing purposes.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/aff004ee-093c-4bf5-8e25-7b8fd32767e1) | ![image](https://github.com/anbere/configure-ad/assets/90169033/65cd6de5-352d-475a-89ad-10e03be84832)
+  |:---:|:---:|
+
+  We have created a generic user, to promote them to an Administrator account we will do the following: 
+
+  Right click the user -> Properties -> Member Of -> Add -> in the textbox write 'Domain Adnmins' -> `Check Names` to make sure the group exists -> Hit OK and Apply the changes.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/26ca5583-9534-49e7-b5b7-582d23e60389)
+
+
+
 </p>
 <br />
