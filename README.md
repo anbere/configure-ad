@@ -24,6 +24,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Ensure Connectivity between the client and Domain Controller
 - Install Active Directory
 - Create an Admin and Normal User Account in AD
+- Join Client-1 to your domain
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -66,9 +67,9 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/3a0dcccd-c399-4d96-adeb-aa7d6705eac8)
 
-  Now, if we login to our client machine and open up Command Prompt, we can ping our Domain Controller by using the following command: `ping 10.0.0.5`. You Domain Controller may have a different private IP address, you can see yours in Azure.
+  Now, if we login to our client machine and open up Command Prompt, we can ping our Domain Controller by using the following command: `ping 10.0.0.4`. You Domain Controller may have a different private IP address, you can see yours in Azure.
 
-  ![image](https://github.com/anbere/configure-ad/assets/90169033/9f11e404-3d7f-4e88-8c79-a3bac27443f8)
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/86bd2dbe-30e4-41ca-81f4-cd73e3339d79)
 
   Great! We have successfully tested our connection from the Client machine to the Domain Controller.
 
@@ -117,11 +118,38 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   We have created a generic user, to promote them to an Administrator account we will do the following: 
 
-  Right click the user -> Properties -> Member Of -> Add -> in the textbox write 'Domain Adnmins' -> `Check Names` to make sure the group exists -> Hit OK and Apply the changes.
+  Right click the user -> Properties -> Member Of -> Add -> in the textbox write 'Domain Admins' -> `Check Names` to make sure the group exists -> Hit OK and Apply the changes.
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/26ca5583-9534-49e7-b5b7-582d23e60389)
+
+  We will use this Admin account from now on when accessing the Domain Controller. Logout from the labuser and login to the new user we just created.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/4ebfbab3-d084-4cf8-88cb-a169e37ab267)
+
+  Now we will join Client-1 to our Domain!
+
+</p>
+<br />
+
+<p>
+
+  <h2>Join Client-1 to your domain</h2>
+
+  In order to join Client-1 to our Domain Controller, we need to change the DNS Server settings on our Client-1. Within Azure, navigate to the Network Interface Card for Client-1 and in the DNS Servers settings, choose 'Custom' and input the private IP address of our Domain Controller that we pinged earlier. 
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/ceb62b27-c49a-4a25-8b6e-b63aa6b9d730)
+
+  After updating the DNS Settings, restart the Client from Azure. Once restarted login our Client-1, right click the Start menu and clikc on `System`. Next click on `Rename this PC (advanced)`. Click on `Change` and under Member Of -< Domain: type our Domain name.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/f3a2885f-df7e-4180-b646-f1105a5c733c)
+
+  A Windows Security popup will appear requesting us to enter credentials of an account with permission to join the domain. Use the Admin account information that we previously created. If successful, it will tell welcome you to the domain and restart the Client.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/8f1dbb22-ee8a-4075-b8ea-f9bfdba40b91)
 
 
 
 </p>
-<br />
+
+
+
