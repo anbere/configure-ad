@@ -72,13 +72,30 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   Great! We have successfully tested our connection from the Client machine to the Domain Controller.
 
-
-
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+  <h2>Install Active Directory</h2>
+
+  Within our Domain Controller, we will open up Server Manager, if it was not already opened by default. Then we will click on `Add Roles and Features` which will open an Installation Wizard for us. Click through the Installation Wizard using the default settings until we get to Server Roles, and make sure `Active Directory Domain Services` is checked. Continue through the rest of the Wizard and install.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/7c87ac4f-bc7c-482a-8cf3-9d306d526e49)
+
+  Next we need to promote this server to a domain controller from within our Server Manager.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/5b92882f-05ec-4555-93ec-ce5415f4933d)
+
+  We will setup a new forest as 'mydomain.com'.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/ee2fea8e-d7b3-487e-8c1f-e79f74742f2d)
+
+  Continue through the installation, and the server will restart when finished. You will temporarily lose connection to the virtual machine while it is rebooting. Reconnect to the virtual machine as before, however, now that is setup as a Domain Controller you will sign in with the username 'mydomain.com\labuser' if you used the same naming choices as this lab. We must login this way because we need to specify the context of the user.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/f6186f2d-78b7-4c3e-8aea-876706c50ee7)
+
+
+  
 </p>
 <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
