@@ -171,7 +171,17 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/24125893-79e6-4023-84e9-2c947238d5fd)
 
-  
+  Run the script and observe the accounts being generated. Note that they are being placed into the '_EMPLOYEES' Organizational Unit that we created previously.
+
+  After letting the script run, we can refresh our '_EMPLOYEEs' folder and see a large amount of users were generated. We can choose any user at random and login to Client-1 with their username and password to verify we set everything up correctly.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/5b13d8f3-00dd-4d7d-9053-59058fc48dbc)
+
+  Make sure to include the domain context, in the case of the user I chose it would be: 'mydomain.com\bidof.ton'
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/83bb8da4-e4e2-4304-8cfe-219d4725b60e)
+
+  Success!
 </p>
 
 
