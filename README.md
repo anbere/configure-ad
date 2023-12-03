@@ -25,6 +25,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Install Active Directory
 - Create an Admin and Normal User Account in AD
 - Join Client-1 to your domain
+- Create a bunch of additional users and attempt to log into Client-1 with one of the users
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -155,12 +156,22 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   Next Navigate to the following: Right Click the Start Menu -> System -> Remote Desktop -> Select users that can remotely access this PC -> Add -> in the text box type: Domain Users -> `Check Names` -> then hit OK and apply those changes. Now all domain users are allowed to login to this computer. Normally you'd want to do this with Group Policy that allows you to change many systems at once.
 
-  ![image](https://github.com/anbere/configure-ad/assets/90169033/a9ff74f9-6a70-4ac9-9242-686168c35f1b)
-
-  
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/a9ff74f9-6a70-4ac9-9242-686168c35f1b) 
 
 
 </p>
+<br />
 
+<p>
+  <h2>Create a bunch of additional users and attempt to log into Client-1 with one of the users</h2>
+
+  We are now going to run a powershell script that will generate a bunch of random names and create AD users for us.
+
+  Login to DC-1 as jane_admin. In the start menu search for Powershell ISE, right click it and run as administrator. In the upper left corner create a new script and paste the text context from this page: https://github.com/anbere/configure-ad/blob/main/Generate-AD-Users
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/24125893-79e6-4023-84e9-2c947238d5fd)
+
+  
+</p>
 
 
