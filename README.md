@@ -139,14 +139,25 @@ For this lab, we are going to create two Virtual Machines on the same Virtual Ne
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/ceb62b27-c49a-4a25-8b6e-b63aa6b9d730)
 
-  After updating the DNS Settings, restart the Client from Azure. Once restarted login our Client-1, right click the Start menu and clikc on `System`. Next click on `Rename this PC (advanced)`. Click on `Change` and under Member Of -< Domain: type our Domain name.
+  After updating the DNS Settings, restart the Client from Azure. Once restarted login to Client-1, right click the Start menu and click on `System`. Next click on `Rename this PC (advanced)`. Click on `Change` and under Member Of -> Domain: type our Domain name.
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/f3a2885f-df7e-4180-b646-f1105a5c733c)
 
-  A Windows Security popup will appear requesting us to enter credentials of an account with permission to join the domain. Use the Admin account information that we previously created. If successful, it will tell welcome you to the domain and restart the Client.
+  A Windows Security popup will appear requesting us to enter credentials of an account with permission to join the domain. Use the Admin account information that we previously created. If successful, it will welcome you to the domain and restart the Client.
 
   ![image](https://github.com/anbere/configure-ad/assets/90169033/8f1dbb22-ee8a-4075-b8ea-f9bfdba40b91)
 
+  If we check back in DC-1, in Active Directory Users and Computers, inside the 'Computers' container on the root of the domain. We will see Client-1, the computer that we just added.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/52f35f26-84cd-4c5e-aa21-5d5baa0111c1)
+
+  Reconnect to Client-1 after the Virtual Machine is running again, with 'mydomain.com\jane_admin' as the user.
+
+  Next Navigate to the following: Right Click the Start Menu -> System -> Remote Desktop -> Select users that can remotely access this PC -> Add -> in the text box type: Domain Users -> `Check Names` -> then hit OK and apply those changes. Now all domain users are allowed to login to this computer. Normally you'd want to do this with Group Policy that allows you to change many systems at once.
+
+  ![image](https://github.com/anbere/configure-ad/assets/90169033/a9ff74f9-6a70-4ac9-9242-686168c35f1b)
+
+  
 
 
 </p>
